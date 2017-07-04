@@ -36,7 +36,7 @@ router.post('/message', checkUserKey, (req, res) => {
     } else {
       res.set({
         'content-type': 'application/json'
-      }).send(JSON.stringify(message.baseType('다시 시도해주세요')));
+      }).send(JSON.stringify(message.baseType('다시 시도해 주세요')));
     }
   });
 });
