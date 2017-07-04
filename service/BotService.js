@@ -7,8 +7,9 @@ const
   cheerio = require('cheerio'),
   async = require('async'),
   message = require('../service/message'),
-  getMenu = require('../service/getMenu'),
   Bot={};
+
+const getMenu = require('../service/getMenu');
 
 Bot.choseMenu = (req, content, callback) => {  
   
@@ -18,7 +19,8 @@ Bot.choseMenu = (req, content, callback) => {
       getMenu(12, callback);
       break;
     case message.buttons[1]: //2식당-점심
-      callback(null, message.baseType('준비중입니다.'));
+      //callback(null, message.baseType('준비중입니다.'));
+      getMenu(22, callback);
       break;
     default:
       callback(null, message.baseType('올바른 입력값이 아닙니다.'));
