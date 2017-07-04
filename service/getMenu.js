@@ -136,7 +136,45 @@ function getMenu(cafe, callback){
 
             callback(returnString); 
         } // cafe == 2
+        else if (cafe == 0) {
+            //console.log("점심 - Cafeteria 1");
+            returnString = "< 뭐 먹지? >";
+ 
+            $('.cafeB_tit', '#layer2').each( function() {
+                var restaurant = myMap.get($(this).find('span.cafeB_restaurant').find('img').attr('src'));
+                if (restaurant) {
+                    var menuTitle = $(this).text().trim();
+                    var description = $(this).parent().find('.cafeB_txt').text();
 
+                    menuTitle = menuTitle
+                    .replace(/\s+/g, '')
+                    .replace('(선택식)', '*')
+                    .replace('[선택식]', '*')
+                    .replace(/\[.*\]/gi, '')
+                    .replace(/\(.*\)/gi, '')
+                    .replace(/\//g,',')
+                    .replace(/,/g, ', ');
+                    description = description
+                    .replace(/\s+/g, '')
+                    .replace('(선택식)', '*')
+                    .replace('[선택식]', '*')
+                    .replace(/\[.*\]/gi, '')
+                    .replace(/\(.*\)/gi, '')
+                    .replace(/\//g,',')
+                    .replace(/,/g, ', ');
+
+                    //console.log(restaurant + ': ' + menuTitle);
+                    returnString += "\n" + menuTitle + "-" + restaurant;
+                    //console.log("Description: " + description);
+                    //console.log("\n\n");
+                }
+                else {
+                    console.log("*** No restaurant: " + $(this).find('span.cafeB_restaurant').find('img').attr('src'));                    
+                }
+            });
+
+            callback(returnString);        
+        }
     });
 }
 
