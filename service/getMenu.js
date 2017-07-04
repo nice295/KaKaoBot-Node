@@ -58,7 +58,7 @@ function getMenu(cafe, callback){
 
         if (cafe == 12) {
             //console.log("점심 - Cafeteria 1");
-            returnString = "< 1식당 - 점심>\n";
+            returnString = "< 1식당 - 점심>";
 
             $('.cafeB_tit', '#layer2').each( function() {
                 var restaurant = myMap.get($(this).find('span.cafeB_restaurant').find('img').attr('src'));
@@ -84,7 +84,7 @@ function getMenu(cafe, callback){
                     .replace(/,/g, ', ');
 
                     //console.log(restaurant + ': ' + menuTitle);
-                    returnString += menuTitle + "-" + restaurant + "\n";
+                    returnString += "\n" + menuTitle + "-" + restaurant;
                     //console.log("Description: " + description);
                     //console.log("\n\n");
                 }
@@ -93,12 +93,11 @@ function getMenu(cafe, callback){
                 }
             });
 
-            //callback(message.baseType(returnString));       
             callback(returnString);        
         }
         else if (cafe == 22) {
             //console.log("점심- Cafeteria 2");
-            returnString = "< 2식당 - 점심>\n";
+            returnString = "< 2식당 - 점심>";
             $('.cafeA_tit', '#layer2').each( function() {
                 var restaurant = myMap.get($(this).find('span.cafeA_restaurant').find('img').attr('src'));
                 if (restaurant) {
@@ -126,7 +125,7 @@ function getMenu(cafe, callback){
                     .replace(/,/g, ', ');
 
                     //console.log(restaurant + ': ' + menuTitle);
-                    returnString += menuTitle + "-" + restaurant + "\n";
+                    returnString += "\n" + menuTitle + "-" + restaurant;
                     //console.log("Description: " + description);
                     //console.log("\n\n");
                 }
@@ -135,7 +134,7 @@ function getMenu(cafe, callback){
                 }
             });
 
-            callback(message.baseType(returnString)); 
+            callback(returnString); 
         } // cafe == 2
 
     });

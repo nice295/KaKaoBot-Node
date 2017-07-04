@@ -21,8 +21,9 @@ Bot.choseMenu = (req, content, callback) => {
       });
       break;
     case message.buttons[1]: //2식당-점심
-      //callback(null, message.baseType('준비중입니다.'));
-      getMenu(22, callback);
+       getMenu(22, function(data) {
+        callback(null, message.baseType(data));
+      });
       break;
     default:
       callback(null, message.baseType('올바른 입력값이 아닙니다.'));
