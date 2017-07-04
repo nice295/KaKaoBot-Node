@@ -41,7 +41,7 @@ function getMenu(cafe, callback){
         {url: 'http://www.welstory.com/menu/seoulrnd/menu.jsp', encoding: 'binary'},
         function(error, response, html){
             if (error) {
-                console.log("error" + error);
+                console.error("error" + error);
                 throw error
             };
 

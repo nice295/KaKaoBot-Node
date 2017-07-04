@@ -16,6 +16,11 @@ const checkUserKey = (req, res, next)=>{
 };
 
 router.get('/keyboard', (req, res) => {
+
+  getJson(12, function(data) {
+    console.error(date);
+  });
+
   res.set({
     'content-type': 'application/json'
   }).send(JSON.stringify(message.buttonsType()));
