@@ -3,6 +3,7 @@ const router = express.Router();
 const message = require('../service/message');
 //const CronService = require('../service/CronService');
 const Bot = require('../service/BotService');
+const getMenu = require('../service/getMenu');
 
 //require('../databases/redis')(router); // redis
 

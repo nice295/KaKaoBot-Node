@@ -6,20 +6,16 @@ const
   request = require('request'),
   cheerio = require('cheerio'),
   async = require('async'),
-  //RedisDAO = require('../service/RedisDAO'),
   message = require('../service/message'),
+  getMenu = require('../service/getMenu'),
   Bot={};
-
-getMenu = (cafeNum, time) => {
-  return cafenum + "메뉴 (" + time + ")\n" +
-  "싱푸-자장면\n";
-};
 
 Bot.choseMenu = (req, content, callback) => {  
   
   switch (content) {
     case message.buttons[0]: //1식당-점심
-      callback(null, message.baseType(getMenu("1식당", "점심")));
+      //callback(null, message.baseType(getMenu(12, callback)));
+      getMenu(12, callback);
       break;
     case message.buttons[1]: //2식당-점심
       callback(null, message.baseType('준비중입니다.'));
