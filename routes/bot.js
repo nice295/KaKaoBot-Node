@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const message = require('../service/message');
-const CronService = require('../service/CronService');
+//const CronService = require('../service/CronService');
 const Bot = require('../service/BotService');
 
 //require('../databases/redis')(router); // redis
