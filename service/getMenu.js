@@ -93,7 +93,8 @@ function getMenu(cafe, callback){
                 }
             });
 
-            callback(message.baseType(returnString));            
+            //callback(message.baseType(returnString));       
+            callback(returnString);        
         }
         else if (cafe == 22) {
             //console.log("점심- Cafeteria 2");

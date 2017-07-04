@@ -17,7 +17,7 @@ Bot.choseMenu = (req, content, callback) => {
     case message.buttons[0]: //1식당-점심
       //callback(null, message.baseType(getMenu(12, callback)));
       getMenu(12, function(data) {
-        callback(null, data);
+        callback(null, message.baseType(data));
       });
       break;
     case message.buttons[1]: //2식당-점심
