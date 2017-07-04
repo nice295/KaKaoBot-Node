@@ -2,7 +2,7 @@ const message = require('../service/message');
 var cheerio = require('cheerio');
 var request = require('request');
 var Iconv1  = require('iconv').Iconv
-getMenu={};
+
 var returnString = "";
 
 var restaurantMap = [
