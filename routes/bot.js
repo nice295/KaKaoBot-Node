@@ -4,7 +4,7 @@ const message = require('../service/message');
 const CronService = require('../service/CronService');
 const Bot = require('../service/BotService');
 
-require('../databases/redis')(router); // redis
+//require('../databases/redis')(router); // redis
 
 const checkUserKey = (req, res, next)=>{
   if(req.body.user_key !== undefined){
