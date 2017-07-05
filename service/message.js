@@ -4,7 +4,9 @@
 
 let message = {};
 
-message.buttons = ['1식당-점심', '2식당-점심', "뭐 먹지?"];
+message.buttons = ['1식당-점심', '2식당-점심', "뭐 먹지?",
+                    '1식당-점심', '2식당-점심', "뭐 먹지?",
+                    '1식당-점심', '2식당-점심', "뭐 먹지?"];
 
 message.buttonsType = () => {
     return {
