@@ -74,7 +74,7 @@ router.post('/message', checkUserKey, (req, res) => {
     if (!err) {
       res.set({
         'content-type': 'application/json'
-      }).send(JSON.stringify(user_key+": "+content+": "+result));
+      }).send(JSON.stringify(_obj.user_key+": "+result));
     } else {
       res.set({
         'content-type': 'application/json'
