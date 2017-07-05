@@ -37,6 +37,10 @@ Bot.choseMenu = (req, content, callback) => {
       });
       break;
 
+    case "내일 뭐먹지?":
+      callback(null, message.baseType("알려드리고 싶지만 나중에 ㅠ.ㅠ"));
+      break;
+
     case "문의하기":
       callback(null, message.baseType("오른쪽 1:1 채팅을 통해 문의하시면 빠르게 대응하겠습니다."));
       break;

@@ -5,7 +5,7 @@
 let message = {};
 
 message.buttons = [ '2식당-아침', '2식당-점심', "2식당-저녁",
-                    '1식당-점심', "문의하기"];
+                    '1식당-점심', "내일 뭐먹지?", "문의하기"];
 
 message.buttonsType = () => {
     return {
