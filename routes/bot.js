@@ -67,11 +67,14 @@ router.post('/message', checkUserKey, (req, res) => {
     content: req.body.content
   };
   
+  console.log("user_key: " + user_key);
+  console.log("content: " + content);
+
   Bot.choseMenu(req, _obj.content, (err, result) => {
     if (!err) {
       res.set({
         'content-type': 'application/json'
-      }).send(JSON.stringify(result));
+      }).send(JSON.stringify(user_key+": "+content+": "+result));
     } else {
       res.set({
         'content-type': 'application/json'
