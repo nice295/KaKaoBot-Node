@@ -15,15 +15,47 @@ const checkUserKey = (req, res, next)=>{
   }
 };
 
-router.get('/keyboard', (req, res) => {
+router.get('/test', (req, res) => {
 
-  /*
-  getMenu(12, function(data) {
-    console.error(data)
+  var returnStrint;
+
+  getMenu(11, function(data) {
+    console.log(data);
+    returnStrint += data;
   });
-  */
+
+  getMenu(12, function(data) {
+    console.log(data);
+    returnStrint += data;
+  });
+
+  getMenu(13, function(data) {
+    console.log(data);
+    returnStrint += data;
+  });
+
+  getMenu(21, function(data) {
+    console.log(data);
+    returnStrint += data;
+  });
+
+  getMenu(22, function(data) {
+    console.log(data);
+    returnStrint += data;
+  });
+
+   getMenu(23, function(data) {
+    console.log(data);
+    returnStrint += data;
+  });
 
   res.set({
+    'content-type': 'application/json'
+  }).send(JSON.stringify(message.baseType(returnStrint)));
+});
+
+router.get('/keyboard', (req, res) => {
+   res.set({
     'content-type': 'application/json'
   }).send(JSON.stringify(message.buttonsType()));
 });
