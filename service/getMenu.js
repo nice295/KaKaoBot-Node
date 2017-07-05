@@ -56,7 +56,46 @@ function getMenu(cafe, callback){
         var date = $('.date', '#layer2').text().replace("년", "").replace("월", "").replace("일", "").trim();
         date = date.replace(/\s/g, ''); 
 
-        if (cafe == 12) {
+        if (cafe == 11) {
+            //console.log("점심 - Cafeteria 1");
+            returnString = "< 1식당 - 아침>";
+
+            $('.cafeB_tit', '#layer1').each( function() {
+                var restaurant = myMap.get($(this).find('span.cafeB_restaurant').find('img').attr('src'));
+                if (restaurant) {
+                    var menuTitle = $(this).text().trim();
+                    var description = $(this).parent().find('.cafeB_txt').text();
+
+                    menuTitle = menuTitle
+                    .replace(/\s+/g, '')
+                    .replace('(선택식)', '*')
+                    .replace('[선택식]', '*')
+                    .replace(/\[.*\]/gi, '')
+                    .replace(/\(.*\)/gi, '')
+                    .replace(/\//g,',')
+                    .replace(/,/g, ', ');
+                    description = description
+                    .replace(/\s+/g, '')
+                    .replace('(선택식)', '*')
+                    .replace('[선택식]', '*')
+                    .replace(/\[.*\]/gi, '')
+                    .replace(/\(.*\)/gi, '')
+                    .replace(/\//g,',')
+                    .replace(/,/g, ', ');
+
+                    //console.log(restaurant + ': ' + menuTitle);
+                    returnString += "\n" + menuTitle + "-" + restaurant;
+                    //console.log("Description: " + description);
+                    //console.log("\n\n");
+                }
+                else {
+                    console.log("*** No restaurant: " + $(this).find('span.cafeB_restaurant').find('img').attr('src'));                    
+                }
+            });
+
+            callback(returnString);        
+        }
+        else if (cafe == 12) {
             //console.log("점심 - Cafeteria 1");
             returnString = "< 1식당 - 점심>";
 
@@ -95,6 +134,86 @@ function getMenu(cafe, callback){
 
             callback(returnString);        
         }
+        else if (cafe == 13) {
+            //console.log("점심 - Cafeteria 1");
+            returnString = "< 1식당 - 저녁>";
+
+            $('.cafeB_tit', '#layer3').each( function() {
+                var restaurant = myMap.get($(this).find('span.cafeB_restaurant').find('img').attr('src'));
+                if (restaurant) {
+                    var menuTitle = $(this).text().trim();
+                    var description = $(this).parent().find('.cafeB_txt').text();
+
+                    menuTitle = menuTitle
+                    .replace(/\s+/g, '')
+                    .replace('(선택식)', '*')
+                    .replace('[선택식]', '*')
+                    .replace(/\[.*\]/gi, '')
+                    .replace(/\(.*\)/gi, '')
+                    .replace(/\//g,',')
+                    .replace(/,/g, ', ');
+                    description = description
+                    .replace(/\s+/g, '')
+                    .replace('(선택식)', '*')
+                    .replace('[선택식]', '*')
+                    .replace(/\[.*\]/gi, '')
+                    .replace(/\(.*\)/gi, '')
+                    .replace(/\//g,',')
+                    .replace(/,/g, ', ');
+
+                    //console.log(restaurant + ': ' + menuTitle);
+                    returnString += "\n" + menuTitle + "-" + restaurant;
+                    //console.log("Description: " + description);
+                    //console.log("\n\n");
+                }
+                else {
+                    console.log("*** No restaurant: " + $(this).find('span.cafeB_restaurant').find('img').attr('src'));                    
+                }
+            });
+
+            callback(returnString);        
+        }
+        else if (cafe == 21) {
+            //console.log("점심- Cafeteria 2");
+            returnString = "< 2식당 - 아침>";
+            $('.cafeA_tit', '#layer1').each( function() {
+                var restaurant = myMap.get($(this).find('span.cafeA_restaurant').find('img').attr('src'));
+                if (restaurant) {
+                    var menuTitle = $(this).text().trim();
+                    var description = $(this).parent().find('.cafeA_txt').text();
+                    //menuTitle = menuTitle.replace(/\s+/g, '').replace('[','(').replace(']',')').replace('/',',');
+                    //description = description.replace(/\s+/g, '').replace(' ', '').replace('[','(').replace(']',')').replace('/',',');
+                    var nm = "(선택식)닭가슴살망고샐러드(계육:국내산)";
+
+                    menuTitle = menuTitle
+                    .replace(/\s+/g, '')
+                    .replace('(선택식)', '*')
+                    .replace('[선택식]', '*')
+                    .replace(/\[.*\]/gi, '')
+                    .replace(/\(.*\)/gi, '')
+                    .replace(/\//g,',')
+                    .replace(/,/g, ', ');
+                    description = description
+                    .replace(/\s+/g, '')
+                    .replace('(선택식)', '*')
+                    .replace('[선택식]', '*')
+                    .replace(/\[.*\]/gi, '')
+                    .replace(/\(.*\)/gi, '')
+                    .replace(/\//g,',')
+                    .replace(/,/g, ', ');
+
+                    //console.log(restaurant + ': ' + menuTitle);
+                    returnString += "\n" + menuTitle + "-" + restaurant;
+                    //console.log("Description: " + description);
+                    //console.log("\n\n");
+                }
+                else {
+                    console.log("*** No restaurant: " + $(this).find('span.cafeA_restaurant').find('img').attr('src'));
+                }
+            });
+
+            callback(returnString); 
+        } // cafe == 2
         else if (cafe == 22) {
             //console.log("점심- Cafeteria 2");
             returnString = "< 2식당 - 점심>";
@@ -136,15 +255,17 @@ function getMenu(cafe, callback){
 
             callback(returnString); 
         } // cafe == 2
-        else if (cafe == 0) {
-            //console.log("점심 - Cafeteria 1");
-            returnString = "< 뭐 먹지? >";
- 
-            $('.cafeB_tit', '#layer2').each( function() {
-                var restaurant = myMap.get($(this).find('span.cafeB_restaurant').find('img').attr('src'));
+        else if (cafe == 23) {
+            //console.log("점심- Cafeteria 2");
+            returnString = "< 2식당 - 저녁>";
+            $('.cafeA_tit', '#layer3').each( function() {
+                var restaurant = myMap.get($(this).find('span.cafeA_restaurant').find('img').attr('src'));
                 if (restaurant) {
                     var menuTitle = $(this).text().trim();
-                    var description = $(this).parent().find('.cafeB_txt').text();
+                    var description = $(this).parent().find('.cafeA_txt').text();
+                    //menuTitle = menuTitle.replace(/\s+/g, '').replace('[','(').replace(']',')').replace('/',',');
+                    //description = description.replace(/\s+/g, '').replace(' ', '').replace('[','(').replace(']',')').replace('/',',');
+                    var nm = "(선택식)닭가슴살망고샐러드(계육:국내산)";
 
                     menuTitle = menuTitle
                     .replace(/\s+/g, '')
@@ -169,12 +290,12 @@ function getMenu(cafe, callback){
                     //console.log("\n\n");
                 }
                 else {
-                    console.log("*** No restaurant: " + $(this).find('span.cafeB_restaurant').find('img').attr('src'));                    
+                    console.log("*** No restaurant: " + $(this).find('span.cafeA_restaurant').find('img').attr('src'));
                 }
             });
 
-            callback(returnString);        
-        }
+            callback(returnString); 
+        } // cafe == 2
     });
 }
 
