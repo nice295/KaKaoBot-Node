@@ -75,16 +75,16 @@ function getMenu(cafe, callback){
 
                     menuTitle = menuTitle
                     .replace(/\s+/g, '')
-                    .replace('(선택식)', '*')
-                    .replace('[선택식]', '*')
+                    .replace('(선택식)', '')
+                    .replace('[선택식]', '')
                     .replace(/\[.*\]/gi, '')
                     .replace(/\(.*\)/gi, '')
                     .replace(/\//g,',')
                     .replace(/,/g, ', ');
                     description = description
                     .replace(/\s+/g, '')
-                    .replace('(선택식)', '*')
-                    .replace('[선택식]', '*')
+                    .replace('(선택식)', '')
+                    .replace('[선택식]', '')
                     .replace(/\[.*\]/gi, '')
                     .replace(/\(.*\)/gi, '')
                     .replace(/\//g,',')
@@ -114,16 +114,16 @@ function getMenu(cafe, callback){
 
                     menuTitle = menuTitle
                     .replace(/\s+/g, '')
-                    .replace('(선택식)', '*')
-                    .replace('[선택식]', '*')
+                    .replace('(선택식)', '')
+                    .replace('[선택식]', '')
                     .replace(/\[.*\]/gi, '')
                     .replace(/\(.*\)/gi, '')
                     .replace(/\//g,',')
                     .replace(/,/g, ', ');
                     description = description
                     .replace(/\s+/g, '')
-                    .replace('(선택식)', '*')
-                    .replace('[선택식]', '*')
+                    .replace('(선택식)', '')
+                    .replace('[선택식]', '')
                     .replace(/\[.*\]/gi, '')
                     .replace(/\(.*\)/gi, '')
                     .replace(/\//g,',')
@@ -153,16 +153,16 @@ function getMenu(cafe, callback){
 
                     menuTitle = menuTitle
                     .replace(/\s+/g, '')
-                    .replace('(선택식)', '*')
-                    .replace('[선택식]', '*')
+                    .replace('(선택식)', '')
+                    .replace('[선택식]', '')
                     .replace(/\[.*\]/gi, '')
                     .replace(/\(.*\)/gi, '')
                     .replace(/\//g,',')
                     .replace(/,/g, ', ');
                     description = description
                     .replace(/\s+/g, '')
-                    .replace('(선택식)', '*')
-                    .replace('[선택식]', '*')
+                    .replace('(선택식)', '')
+                    .replace('[선택식]', '')
                     .replace(/\[.*\]/gi, '')
                     .replace(/\(.*\)/gi, '')
                     .replace(/\//g,',')
@@ -194,16 +194,16 @@ function getMenu(cafe, callback){
 
                     menuTitle = menuTitle
                     .replace(/\s+/g, '')
-                    .replace('(선택식)', '*')
-                    .replace('[선택식]', '*')
+                    .replace('(선택식)', '')
+                    .replace('[선택식]', '')
                     .replace(/\[.*\]/gi, '')
                     .replace(/\(.*\)/gi, '')
                     .replace(/\//g,',')
                     .replace(/,/g, ', ');
                     description = description
                     .replace(/\s+/g, '')
-                    .replace('(선택식)', '*')
-                    .replace('[선택식]', '*')
+                    .replace('(선택식)', '')
+                    .replace('[선택식]', '')
                     .replace(/\[.*\]/gi, '')
                     .replace(/\(.*\)/gi, '')
                     .replace(/\//g,',')
@@ -235,16 +235,16 @@ function getMenu(cafe, callback){
 
                     menuTitle = menuTitle
                     .replace(/\s+/g, '')
-                    .replace('(선택식)', '*')
-                    .replace('[선택식]', '*')
+                    .replace('(선택식)', '')
+                    .replace('[선택식]', '')
                     .replace(/\[.*\]/gi, '')
                     .replace(/\(.*\)/gi, '')
                     .replace(/\//g,',')
                     .replace(/,/g, ', ');
                     description = description
                     .replace(/\s+/g, '')
-                    .replace('(선택식)', '*')
-                    .replace('[선택식]', '*')
+                    .replace('(선택식)', '')
+                    .replace('[선택식]', '')
                     .replace(/\[.*\]/gi, '')
                     .replace(/\(.*\)/gi, '')
                     .replace(/\//g,',')
@@ -276,16 +276,16 @@ function getMenu(cafe, callback){
 
                     menuTitle = menuTitle
                     .replace(/\s+/g, '')
-                    .replace('(선택식)', '*')
-                    .replace('[선택식]', '*')
+                    .replace('(선택식)', '')
+                    .replace('[선택식]', '')
                     .replace(/\[.*\]/gi, '')
                     .replace(/\(.*\)/gi, '')
                     .replace(/\//g,',')
                     .replace(/,/g, ', ');
                     description = description
                     .replace(/\s+/g, '')
-                    .replace('(선택식)', '*')
-                    .replace('[선택식]', '*')
+                    .replace('(선택식)', '')
+                    .replace('[선택식]', '')
                     .replace(/\[.*\]/gi, '')
                     .replace(/\(.*\)/gi, '')
                     .replace(/\//g,',')
