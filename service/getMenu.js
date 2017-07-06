@@ -91,7 +91,7 @@ function getMenu(cafe, callback){
                     .replace(/,/g, ', ');
 
                     //console.log(restaurant + ': ' + menuTitle);
-                    returnString += "\n" + menuTitle + "-" + restaurant;
+                    returnString += "\n" + menuTitle + " - " + restaurant;
                     //console.log("Description: " + description);
                     //console.log("\n\n");
                 }
@@ -130,7 +130,7 @@ function getMenu(cafe, callback){
                     .replace(/,/g, ', ');
 
                     //console.log(restaurant + ': ' + menuTitle);
-                    returnString += "\n" + menuTitle + "-" + restaurant;
+                    returnString += "\n" + menuTitle + " - " + restaurant;
                     //console.log("Description: " + description);
                     //console.log("\n\n");
                 }
@@ -169,7 +169,7 @@ function getMenu(cafe, callback){
                     .replace(/,/g, ', ');
 
                     //console.log(restaurant + ': ' + menuTitle);
-                    returnString += "\n" + menuTitle + "-" + restaurant;
+                    returnString += "\n" + menuTitle + " - " + restaurant;
                     //console.log("Description: " + description);
                     //console.log("\n\n");
                 }
@@ -210,7 +210,7 @@ function getMenu(cafe, callback){
                     .replace(/,/g, ', ');
 
                     //console.log(restaurant + ': ' + menuTitle);
-                    returnString += "\n" + menuTitle + "-" + restaurant;
+                    returnString += "\n" + menuTitle + " - " + restaurant;
                     //console.log("Description: " + description);
                     //console.log("\n\n");
                 }
@@ -251,7 +251,7 @@ function getMenu(cafe, callback){
                     .replace(/,/g, ', ');
 
                     //console.log(restaurant + ': ' + menuTitle);
-                    returnString += "\n" + menuTitle + "-" + restaurant;
+                    returnString += "\n" + menuTitle + " - " + restaurant;
                     //console.log("Description: " + description);
                     //console.log("\n\n");
                 }
@@ -292,7 +292,7 @@ function getMenu(cafe, callback){
                     .replace(/,/g, ', ');
 
                     //console.log(restaurant + ': ' + menuTitle);
-                    returnString += "\n" + menuTitle + "-" + restaurant;
+                    returnString += "\n" + menuTitle + " - " + restaurant;
                     //console.log("Description: " + description);
                     //console.log("\n\n");
                 }

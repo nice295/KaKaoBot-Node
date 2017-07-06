@@ -14,7 +14,7 @@ const getMenu = require('../service/getMenu');
 Bot.choseMenu = (req, content, callback) => {  
   
   switch (content) {
-    case "1식당-점심(하하)":
+    case "1식당-점심 🤖":
        getMenu(12, function(data) {
         callback(null, message.baseType(data));
       });
