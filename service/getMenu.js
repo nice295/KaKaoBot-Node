@@ -104,7 +104,7 @@ function getMenu(cafe, callback){
         }
         else if (cafe == 12) {
             //console.log("점심 - Cafeteria 1");
-            returnString = "< 1식당(AB타워) - 점심>";
+            returnString = "< 1식당(AB타워) - 점심> (하하)";
 
             $('.cafeB_tit', '#layer2').each( function() {
                 var restaurant = myMap.get($(this).find('span.cafeB_restaurant').find('img').attr('src'));
