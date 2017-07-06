@@ -7,40 +7,40 @@ var returnString = "";
 
 var restaurantMap = [
 ["/img/menu/seoulrnd/dayMenu/menu_b_spring.gif", "봄이온소반"],
-["/img/menu/seoulrnd/dayMenu/menu_b_to_sandwich.gif", "Take Me Out 샌드위치"],
+["/img/menu/seoulrnd/dayMenu/menu_b_to_sandwich.gif", "테이크아웃"],
 ["/img/menu/seoulrnd/dayMenu/menu_b_brown.gif", "브라운그릴"],
 ["/img/menu/seoulrnd/dayMenu/menu_b_dodam.gif", "도담찌개"],
 ["/img/menu/seoulrnd/dayMenu/menu_b_woori.gif", "우리미각면"],
 ["/img/menu/seoulrnd/dayMenu/menu_b_brown.gif", "브라운그릴"],
 ["/img/menu/seoulrnd/dayMenu/menu_b_health_korean.gif", "아시안픽스"],
-["/img/menu/seoulrnd/dayMenu/menu_b_health_bibim.gif", "헬스기빙365비빔"],
-["/img/menu/seoulrnd/dayMenu/menu_b_singfu.gif", "씽푸차이나"],
+["/img/menu/seoulrnd/dayMenu/menu_b_health_bibim.gif", "헬스기빙365"],
+["/img/menu/seoulrnd/dayMenu/menu_b_singfu.gif", "싱푸차이나"],
 
-["/img/menu/seoulrnd/dayMenu/menu_b_to_juice.gif", "Take Me Out 착즙"],
-["/img/menu/seoulrnd/dayMenu/menu_b_to_picnic.gif", "Take Me Out 피크닉"],
-["/img/menu/seoulrnd/dayMenu/menu_b_to_pizza.gif", "Take Me Out 피자"],
-["/img/menu/seoulrnd/dayMenu/menu_b_to_bibim.gif", "Take Me Out 헬시팩"],
-["/img/menu/seoulrnd/dayMenu/menu_b_to_fruit.gif", "Take Me Out 과일"],
+["/img/menu/seoulrnd/dayMenu/menu_b_to_juice.gif", "테이크아웃"],
+["/img/menu/seoulrnd/dayMenu/menu_b_to_picnic.gif", "테이크아웃"],
+["/img/menu/seoulrnd/dayMenu/menu_b_to_pizza.gif", "테이크아웃"],
+["/img/menu/seoulrnd/dayMenu/menu_b_to_bibim.gif", "테이크아웃"],
+["/img/menu/seoulrnd/dayMenu/menu_b_to_fruit.gif", "테이크아웃"],
 ["/img/menu/seoulrnd/dayMenu/menu_b_gosel.gif", "고슬고슬비빈"],
-["/img/menu/seoulrnd/dayMenu/menu_b_health_theme.gif", "헬스기빙365 테마밥상"],
-["/img/menu/seoulrnd/dayMenu/menu_b_snap_snack.gif", "스냅스넥 김밥 (TO)"],
+["/img/menu/seoulrnd/dayMenu/menu_b_health_theme.gif", "헬스기빙365"],
+["/img/menu/seoulrnd/dayMenu/menu_b_snap_snack.gif", "테이크아웃"],
 ["/img/menu/seoulrnd/dayMenu/menu_b_snap.gif", "스냅스넥"],
-["/img/menu/seoulrnd/dayMenu/menu_b_health_juice.gif", "Take Me Out 착즙주스"],
-["/img/menu/seoulrnd/dayMenu/menu_b_to_bread.gif", "Take Me Out 즉석빵"],
-["/img/menu/seoulrnd/dayMenu/menu_b_health_salad.gif", "Take Me Out"],
+["/img/menu/seoulrnd/dayMenu/menu_b_health_juice.gif", "테이크아웃"],
+["/img/menu/seoulrnd/dayMenu/menu_b_to_bread.gif", "테이크아웃"],
+["/img/menu/seoulrnd/dayMenu/menu_b_health_salad.gif", "테이크아웃"],
 ["/img/menu/seoulrnd/dayMenu/menu_b_gats.gif", "가츠엔"],
 
 ["/img/menu/seoulrnd/dayMenu/cafeteria_1_menu_01.gif", "봄이온소반"],
 ["/img/menu/seoulrnd/dayMenu/cafeteria_1_menu_05.gif", "싱푸차이나"],
 ["/img/menu/seoulrnd/dayMenu/cafeteria_1_menu_02.gif", "도담찌개"],
-["/img/menu/seoulrnd/dayMenu/cafeteria_1_menu_china_01.gif", "싱푸차이나1"],
-["/img/menu/seoulrnd/dayMenu/cafeteria_1_menu_china_02.gif", "싱푸차이나2"],
+["/img/menu/seoulrnd/dayMenu/cafeteria_1_menu_china_01.gif", "싱푸차이나"],
+["/img/menu/seoulrnd/dayMenu/cafeteria_1_menu_china_02.gif", "싱푸차이나"],
 ["/img/menu/seoulrnd/dayMenu/cafeteria_1_menu_dodam_01.gif", "도담찌개"],
 ["/img/menu/seoulrnd/dayMenu/cafeteria_1_menu_03.gif", "테이스티가든"],
-["/img/menu/seoulrnd/dayMenu/cafeteria_1_menu_08.gif", "스냅스냅 착즙쥬스 (TO)"],   
+["/img/menu/seoulrnd/dayMenu/cafeteria_1_menu_08.gif", "테이크아웃"],   
 ["/img/menu/seoulrnd/dayMenu/cafeteria_1_menu_04.gif", "가츠엔"],
-["/img/menu/seoulrnd/dayMenu/cafeteria_1_menu_09.gif", "스냅스냅 피크닉 (TO)"],
-["/img/menu/seoulrnd/dayMenu/cafeteria_1_menu_healthy.gif", "Take Me Out 헬시팩"]
+["/img/menu/seoulrnd/dayMenu/cafeteria_1_menu_09.gif", "테이크아웃"],
+["/img/menu/seoulrnd/dayMenu/cafeteria_1_menu_healthy.gif", "테이크아웃"]
 ];
 
 function getMenu(cafe, callback){
@@ -65,7 +65,7 @@ function getMenu(cafe, callback){
 
         if (cafe == 11) {
             //console.log("점심 - Cafeteria 1");
-            returnString = "< 1식당 - 아침>";
+            returnString = "< 1식당(AB타워) - 아침>";
 
             $('.cafeB_tit', '#layer1').each( function() {
                 var restaurant = myMap.get($(this).find('span.cafeB_restaurant').find('img').attr('src'));
@@ -104,7 +104,7 @@ function getMenu(cafe, callback){
         }
         else if (cafe == 12) {
             //console.log("점심 - Cafeteria 1");
-            returnString = "< 1식당 - 점심>";
+            returnString = "< 1식당(AB타워) - 점심>";
 
             $('.cafeB_tit', '#layer2').each( function() {
                 var restaurant = myMap.get($(this).find('span.cafeB_restaurant').find('img').attr('src'));
@@ -143,7 +143,7 @@ function getMenu(cafe, callback){
         }
         else if (cafe == 13) {
             //console.log("점심 - Cafeteria 1");
-            returnString = "< 1식당 - 저녁>";
+            returnString = "< 1식당(AB타워) - 저녁>";
 
             $('.cafeB_tit', '#layer3').each( function() {
                 var restaurant = myMap.get($(this).find('span.cafeB_restaurant').find('img').attr('src'));
@@ -182,7 +182,7 @@ function getMenu(cafe, callback){
         }
         else if (cafe == 21) {
             //console.log("점심- Cafeteria 2");
-            returnString = "< 2식당 - 아침>";
+            returnString = "< 2식당(D타워) - 아침>";
             $('.cafeA_tit', '#layer1').each( function() {
                 var restaurant = myMap.get($(this).find('span.cafeA_restaurant').find('img').attr('src'));
                 if (restaurant) {
@@ -223,7 +223,7 @@ function getMenu(cafe, callback){
         } // cafe == 2
         else if (cafe == 22) {
             //console.log("점심- Cafeteria 2");
-            returnString = "< 2식당 - 점심>";
+            returnString = "< 2식당(D타워) - 점심>";
             $('.cafeA_tit', '#layer2').each( function() {
                 var restaurant = myMap.get($(this).find('span.cafeA_restaurant').find('img').attr('src'));
                 if (restaurant) {
@@ -264,7 +264,7 @@ function getMenu(cafe, callback){
         } // cafe == 2
         else if (cafe == 23) {
             //console.log("점심- Cafeteria 2");
-            returnString = "< 2식당 - 저녁>";
+            returnString = "< 2식당(D타워) - 저녁>";
             $('.cafeA_tit', '#layer3').each( function() {
                 var restaurant = myMap.get($(this).find('span.cafeA_restaurant').find('img').attr('src'));
                 if (restaurant) {
