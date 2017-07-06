@@ -182,7 +182,7 @@ function getMenu(cafe, callback){
         }
         else if (cafe == 21) {
             //console.log("점심- Cafeteria 2");
-            returnString = "< 2식당(D타워) - 아침>";
+            returnString = "< 2식당(D타워) - 아침> (굿)";
             $('.cafeA_tit', '#layer1').each( function() {
                 var restaurant = myMap.get($(this).find('span.cafeA_restaurant').find('img').attr('src'));
                 if (restaurant) {
@@ -223,7 +223,7 @@ function getMenu(cafe, callback){
         } // cafe == 2
         else if (cafe == 22) {
             //console.log("점심- Cafeteria 2");
-            returnString = "< 2식당(D타워) - 점심>";
+            returnString = "< 2식당(D타워) - 점심> (아잉)";
             $('.cafeA_tit', '#layer2').each( function() {
                 var restaurant = myMap.get($(this).find('span.cafeA_restaurant').find('img').attr('src'));
                 if (restaurant) {
@@ -264,7 +264,7 @@ function getMenu(cafe, callback){
         } // cafe == 2
         else if (cafe == 23) {
             //console.log("점심- Cafeteria 2");
-            returnString = "< 2식당(D타워) - 저녁>";
+            returnString = "< 2식당(D타워) - 저녁> (감동)";
             $('.cafeA_tit', '#layer3').each( function() {
                 var restaurant = myMap.get($(this).find('span.cafeA_restaurant').find('img').attr('src'));
                 if (restaurant) {

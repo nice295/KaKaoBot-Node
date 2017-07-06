@@ -14,7 +14,7 @@ const getMenu = require('../service/getMenu');
 Bot.choseMenu = (req, content, callback) => {  
   
   switch (content) {
-    case "1식당-점심 🤖":
+    case "1식당-점심":
        getMenu(12, function(data) {
         callback(null, message.baseType(data));
       });
@@ -38,15 +38,15 @@ Bot.choseMenu = (req, content, callback) => {
       break;
 
     case "내일 뭐먹지?":
-      callback(null, message.baseType("알려드리고 싶지만 나중에 ㅠ.ㅠ"));
+      callback(null, message.baseType("알려드리고 싶지만 나중에... (아잉)"));
       break;
 
     case "문의하기":
-      callback(null, message.baseType("오른쪽 1:1 채팅을 통해 문의하시면 빠르게 대응하겠습니다."));
+      callback(null, message.baseType("오른쪽 1:1 채팅을 통해 문의하시면 빠르게 대응하겠습니다. (꺄아)"));
       break;
 
     default:
-      callback(null, message.baseType('어이쿠~'));
+      callback(null, message.baseType('어이쿠~ (발그레)'));
       break;
   }
 };
