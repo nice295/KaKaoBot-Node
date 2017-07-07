@@ -16,29 +16,38 @@ Bot.choseMenu = (req, content, callback) => {
   
   switch (content) {
     case "🏠 1식당-점심":
+    case "점심":
+    case "1식당":
+    case "1":
        getMenu(12, function(data) {
         callback(null, message.baseType(data));
       });
       break;
 
     case "2식당-아침":
-
+    case "아침":
        getMenu(21, function(data) {
         callback(null, message.baseType(data));
       });
       break;
+
     case "2식당-점심":
+    case "2식당":
+    case "2":
        getMenu(22, function(data) {
         callback(null, message.baseType(data));
       });
       break;
+
     case "2식당-저녁":
+    case "저녁":
        getMenu(23, function(data) {
         callback(null, message.baseType(data));
       });
       break;
 
     case "내일 뭐먹지?":
+    case "내일":
       callback(null, message.baseType("알려드리고 싶지만 나중에... (아잉)"));
       break;
 
@@ -47,6 +56,7 @@ Bot.choseMenu = (req, content, callback) => {
       break;
 
     case "끝":
+    case ".":
       callback(null, message.baseType("다음에 또 봐요. 🤖"));
       break;
 
