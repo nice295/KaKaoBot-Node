@@ -27,6 +27,18 @@ message.baseType = (text) => {
     }
 };
 
+message.baseTypeText = (text) => {
+    return {
+        message: {
+            text: text,
+        },
+        keyboard: {
+            type: 'text'
+        }
+    }
+};
+
+
 message.photoType = (text, url_photo, label, url_button) => {
     return {
       message: {
