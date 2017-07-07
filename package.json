@@ -17,9 +17,9 @@
     "node-cron": "^1.1.3",
     "node-sass-middleware": "0.9.8",
     "node-schedule": "^1.2.0",
-    "redis": "^2.6.5",
     "request": "^2.79.0",
     "iconv": "latest",
+    "apiai": "latest",
     "serve-favicon": "~2.3.0"
   }
 }

@@ -4,6 +4,7 @@ const message = require('../service/message');
 //const CronService = require('../service/CronService');
 const Bot = require('../service/BotService');
 const getMenu = require('../service/getMenu');
+const getApiai = require('../service/getApiai');
 
 //require('../databases/redis')(router); // redis
 
@@ -18,6 +19,10 @@ const checkUserKey = (req, res, next)=>{
 router.get('/test', (req, res) => {
 
   var returnStrint;
+
+  getApiai("하이", function(data) {
+    console.log(data);
+  });
 
   getMenu(11, function(data) {
     console.log(data);
@@ -55,7 +60,7 @@ router.get('/test', (req, res) => {
 });
 
 router.get('/keyboard', (req, res) => {
-   res.set({
+  res.set({
     'content-type': 'application/json'
   }).send(JSON.stringify(message.buttonsType()));
 });

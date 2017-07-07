@@ -10,6 +10,7 @@ const
   Bot={};
 
 const getMenu = require('../service/getMenu');
+const getApiai = require('../service/getApiai');
 
 Bot.choseMenu = (req, content, callback) => {  
   
@@ -41,12 +42,18 @@ Bot.choseMenu = (req, content, callback) => {
       callback(null, message.baseType("알려드리고 싶지만 나중에... (아잉)"));
       break;
 
-    case "문의하기":
-      callback(null, message.baseTypeText("오른쪽 1:1 채팅을 통해 문의하시면 빠르게 대응하겠습니다. (꺄아)"));
+    case "🤖 박스비와 대화하기 (실험실)":
+      callback(null, message.baseTypeText("🤖 안녕하세요? 여러분의 친구 박스비(Boxby)예요.\n간단한 대화도 할 수 있답니다.\n더 이상 대화를 원하지 않으시면 [끝]을 쳐 주세요."));
+      break;
+
+    case "끝":
+      callback(null, message.baseType("다음에 또 봐요. 🤖"));
       break;
 
     default:
-      callback(null, message.baseType('어이쿠~ (발그레)'));
+      getApiai(content, function(data) {
+        callback(null, message.baseTypeText(data));
+      });
       break;
   }
 };
