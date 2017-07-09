@@ -10,6 +10,7 @@ const
   Bot = {};
 
 const getMenu = require('../service/getMenu');
+const getTomorrowMenu = require('../service/getMenu');
 const getApiai = require('../service/getApiai');
 const cache = require('memory-cache');
 
@@ -49,6 +50,10 @@ Bot.choseMenu = (req, content, callback) => {
 
     case "내일 뭐먹지?":
     case "내일":
+      getTomorrowMenu(function (data) {
+        callback(null, message.baseType(data));
+      });
+      /*
       if (cache.get('tomorrow-menu')) {
         console.log(cache.get('tomorrow-menu'));
         callback(null, message.baseType(cache.get('tomorrow-menu')));
@@ -59,6 +64,7 @@ Bot.choseMenu = (req, content, callback) => {
           cache.put('tomorrow-menu', data, 1 * 60 * 60 * 1000);
         });
       }
+      */
       //callback(null, message.baseType("알려드리고 싶지만 나중에... (아잉)"));
       break;
 
