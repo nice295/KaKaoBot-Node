@@ -72,7 +72,7 @@ function getTomorrowMenu(callback) {
             var datetime = require('node-datetime');
             var dt = datetime.create();
             dt.offsetInDays(1); // 1 day in the future
-            var formattedDate = dt.format('Y.m.d'); //2017.07.07
+            var formattedDate = dt.format('Y/m/d'); //2017/07/07
             returnString += "내일 메뉴 - "+ formattedDate;
 
             returnString += "\n\n< 1식당(AB타워) - 점심> (하하)";
