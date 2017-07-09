@@ -20,6 +20,7 @@
     "request": "^2.79.0",
     "iconv": "latest",
     "apiai": "latest",
+    "memory-cache": "latest",    
     "serve-favicon": "~2.3.0"
   }
 }
