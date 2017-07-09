@@ -68,7 +68,14 @@ function getTomorrowMenu(callback) {
             date = date.replace(/\s/g, '');
 
             //console.log("점심 - Cafeteria 1");
-            returnString = "< 1식당(AB타워) - 점심> (하하)";
+
+            var datetime = require('node-datetime');
+            var dt = datetime.create();
+            dt.offsetInDays(1); // 1 day in the future
+            var formattedDate = dt.format('Y.m.d'); //2017.07.07
+            returnString += "내일 메뉴 - "+ formattedDate;
+
+            returnString += "\n\n< 1식당(AB타워) - 점심> (하하)";
 
             $('.cafeB_tit', '#layer2').each(function () {
                 var restaurant = myMap.get($(this).find('span.cafeB_restaurant').find('img').attr('src'));
