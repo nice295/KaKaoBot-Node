@@ -301,6 +301,7 @@ function getMenu(cafe, callback) {
         });
 }
 
+/*
 function getTomorrowMenu(callback) {
     request({
             url: 'http://www.welstory.com/menu/seoulrnd/menu.jsp?meal_type=2&course=AA&dtFlag=2',
@@ -481,6 +482,7 @@ function getTomorrowMenu(callback) {
             callback(returnString);
         });
 }
+*/
 
 module.exports = getMenu;
-module.exports = getTomorrowMenu;
+//module.exports = getTomorrowMenu;
