@@ -21,31 +21,79 @@ Bot.choseMenu = (req, content, callback) => {
     case "점심":
     case "1식당":
     case "1":
+      if (cache.get('1-lunch')) {
+        console.log(cache.get('1-lunch'));
+        callback(null, message.baseType(cache.get('1-lunch')));
+      } else {
+        console.log("No 1-lunch");
+        getMenu(12, function (data) {
+          callback(null, message.baseType(data));
+          cache.put('1-lunch', data, 1 * 60 * 60 * 1000);
+        });
+      }
+      /*
       getMenu(12, function (data) {
         callback(null, message.baseType(data));
       });
+      */
       break;
 
     case "2식당-아침":
     case "아침":
+      if (cache.get('2-breakfast')) {
+        console.log(cache.get('2-breakfast'));
+        callback(null, message.baseType(cache.get('2-breakfast')));
+      } else {
+        console.log("No 2-breakfast");
+        getMenu(12, function (data) {
+          callback(null, message.baseType(data));
+          cache.put('2-breakfast', data, 1 * 60 * 60 * 1000);
+        });
+      }
+      /*
       getMenu(21, function (data) {
         callback(null, message.baseType(data));
       });
+      */
       break;
 
     case "2식당-점심":
     case "2식당":
     case "2":
+      if (cache.get('2-lunch')) {
+        console.log(cache.get('2-lunch'));
+        callback(null, message.baseType(cache.get('2-lunch')));
+      } else {
+        console.log("No 2-lunch");
+        getMenu(12, function (data) {
+          callback(null, message.baseType(data));
+          cache.put('2-lunch', data, 1 * 60 * 60 * 1000);
+        });
+      }
+      /*
       getMenu(22, function (data) {
         callback(null, message.baseType(data));
       });
+      */
       break;
 
     case "2식당-저녁":
     case "저녁":
+      if (cache.get('2-dinner')) {
+        console.log(cache.get('2-dinner'));
+        callback(null, message.baseType(cache.get('2-dinner')));
+      } else {
+        console.log("No 2-dinner");
+        getMenu(12, function (data) {
+          callback(null, message.baseType(data));
+          cache.put('2-dinner', data, 1 * 60 * 60 * 1000);
+        });
+      }
+      /*
       getMenu(23, function (data) {
         callback(null, message.baseType(data));
       });
+      */
       break;
 
     case "내일 뭐먹지?":
