@@ -45,7 +45,7 @@ Bot.choseMenu = (req, content, callback) => {
         callback(null, message.baseType(cache.get('2-breakfast')));
       } else {
         console.log("No 2-breakfast");
-        getMenu(12, function (data) {
+        getMenu(21, function (data) {
           callback(null, message.baseType(data));
           cache.put('2-breakfast', data, 1 * 60 * 60 * 1000);
         });
@@ -65,7 +65,7 @@ Bot.choseMenu = (req, content, callback) => {
         callback(null, message.baseType(cache.get('2-lunch')));
       } else {
         console.log("No 2-lunch");
-        getMenu(12, function (data) {
+        getMenu(22, function (data) {
           callback(null, message.baseType(data));
           cache.put('2-lunch', data, 1 * 60 * 60 * 1000);
         });
@@ -84,7 +84,7 @@ Bot.choseMenu = (req, content, callback) => {
         callback(null, message.baseType(cache.get('2-dinner')));
       } else {
         console.log("No 2-dinner");
-        getMenu(12, function (data) {
+        getMenu(23, function (data) {
           callback(null, message.baseType(data));
           cache.put('2-dinner', data, 1 * 60 * 60 * 1000);
         });
