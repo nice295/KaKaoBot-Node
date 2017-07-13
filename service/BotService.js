@@ -112,7 +112,7 @@ Bot.choseMenu = (req, content, callback) => {
       break;
 
     case "문의하기":
-      callback(null, message.messageButtonType("아래 링크를 통해 오류와 개선제안을 하실 수 있습니다.", "[서울R&D메뉴] 문의하기", "https://docs.google.com/forms/u/0/d/e/1FAIpQLScxmXXdTB75iutcM5a9LbB-Bz3iRVacRmywu88cNo65_6F4mw/viewform?usp=sf_link"));
+      callback(null, message.messageButtonType("아래 링크를 통해 오류와 개선제안을 하실 수 있습니다.", "문의하기", "https://docs.google.com/forms/u/0/d/e/1FAIpQLScxmXXdTB75iutcM5a9LbB-Bz3iRVacRmywu88cNo65_6F4mw/viewform?usp=sf_link"));
       break;
 
     case "🤖 박스비와 대화하기 (실험실)":
