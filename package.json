@@ -24,6 +24,7 @@
     "apiai": "latest",
     "time": "latest",  
     "dateformat": "latest",  
+    "firebase": "latest",
     "serve-favicon": "~2.3.0"
   }
 }
