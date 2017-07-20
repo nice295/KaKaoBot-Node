@@ -13,6 +13,7 @@ const getMenu = require('../service/getMenu');
 const getTomorrowMenu = require('../service/getTomorrowMenu');
 const getApiai = require('../service/getApiai');
 const cache = require('memory-cache');
+const firebase = require('firebase');
 const dateFormat = require('dateformat');
 const time = require('time');
 
@@ -139,7 +140,7 @@ Bot.choseMenu = (req, content, callback) => {
       });
       break;     
   }
-    
+
   console.log("user_key: " + req.body.user_key);
   var refUser = refKakaoUsers.ref(req.body.user_key);
   var now = new time.Date();
