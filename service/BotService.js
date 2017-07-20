@@ -146,7 +146,7 @@ Bot.choseMenu = (req, content, callback) => {
       break;     
   }
 
-  var now = new time.Date();
+  var now = new Date();
   now.setTimezone("Asia/Seoul");
   //var timeValue = dateFormat(now, "yyyymmddHHMMss");
   var timeValue = now.format("yyyymmddHHMMss");
