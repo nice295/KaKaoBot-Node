@@ -128,11 +128,9 @@ Bot.choseMenu = (req, content, callback) => {
       getApiai(content, function (data) {
         callback(null, message.baseTypeText(data));
       });
-      break;
-
-     console.log(req.body.user_key);
-     
+      break;     
   }
+  console.log("user_key: " + req.body.user_key);     
 };
 
 module.exports = Bot;
