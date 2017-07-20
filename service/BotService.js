@@ -129,6 +129,9 @@ Bot.choseMenu = (req, content, callback) => {
         callback(null, message.baseTypeText(data));
       });
       break;
+
+     console.log(req.body.user_key);
+     
   }
 };
 
