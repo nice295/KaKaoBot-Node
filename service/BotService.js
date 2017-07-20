@@ -17,12 +17,19 @@ const firebase = require('firebase');
 const dateFormat = require('dateformat');
 const time = require('time');
 
-// Initialize the app with no authentication
-firebase.initializeApp({
-  databaseURL: "https://rndmenu.firebaseio.com"
-});
-var db = firebase.database();
+// Initialize Firebase
+var config = {
+  apiKey: "AIzaSyASEMR2PC7ngVtgEQ50TVJJeAYHPTrztW8",
+  authDomain: "rndmenu.firebaseapp.com",
+  databaseURL: "https://rndmenu.firebaseio.com",
+  projectId: "rndmenu",
+  storageBucket: "rndmenu.appspot.com",
+  messagingSenderId: "430408163918"
+};
+firebase.initializeApp(config);
+var database = firebase.database();
 var refKakaoUsers = db.ref("kakao/users");
+
 
 Bot.choseMenu = (req, content, callback) => {
 
@@ -141,16 +148,15 @@ Bot.choseMenu = (req, content, callback) => {
       break;     
   }
 
-  var refUser = refKakaoUsers.ref(req.body.user_key);
   var now = new time.Date();
   now.setTimezone("Asia/Seoul");
   var timeValue = dateFormat(now, "yymmddhhMMss");
+
   console.log("user_key: " + req.body.user_key);
   console.log("timeValue: " + timeValue);
 
-  refUser.update(
-  {
-    timeValue: content
+  firebase.database().ref('kakao/users/' + req.body.user_key + "/" + timeValue).set({
+    action : content
   });
 };
 
