@@ -148,13 +148,16 @@ Bot.choseMenu = (req, content, callback) => {
 
   var now = new time.Date();
   now.setTimezone("Asia/Seoul");
-  //var timeValue = dateFormat(now, "KST:yyyymmddHHMMss");
   var timeValue = now.toString()
 
   console.log("user_key: " + req.body.user_key);
   console.log("timeValue: " + timeValue);
 
-  firebase.database().ref('kakao/users/' + req.body.user_key + "/" + timeValue).set({
+  firebase.database().ref('kakao/users/' + req.body.user_key + '/action/' + content).set({
+    time : timeValue
+  });
+
+  firebase.database().ref('kakao/users/' + req.body.user_key + '/time/' + timeValue).set({
     action : content
   });
 };
