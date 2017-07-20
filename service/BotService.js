@@ -13,6 +13,15 @@ const getMenu = require('../service/getMenu');
 const getTomorrowMenu = require('../service/getTomorrowMenu');
 const getApiai = require('../service/getApiai');
 const cache = require('memory-cache');
+const dateFormat = require('dateformat');
+const time = require('time');
+
+// Initialize the app with no authentication
+firebase.initializeApp({
+  databaseURL: "https://rndmenu.firebaseio.com"
+});
+var db = firebase.database();
+var refKakaoUsers = db.ref("kakao/users");
 
 Bot.choseMenu = (req, content, callback) => {
 
@@ -130,7 +139,16 @@ Bot.choseMenu = (req, content, callback) => {
       });
       break;     
   }
-  console.log("user_key: " + req.body.user_key);     
+    
+  console.log("user_key: " + req.body.user_key);
+  var refUser = refKakaoUsers.ref(req.body.user_key);
+  var now = new time.Date();
+  now.setTimezone("Asia/Seoul");
+  var timeValue = dateFormat(now, "yymmddhhMMss");
+  restaurantRef.update(
+  {
+    timeValue: content
+  });
 };
 
 module.exports = Bot;
