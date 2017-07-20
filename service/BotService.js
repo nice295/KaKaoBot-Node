@@ -141,12 +141,14 @@ Bot.choseMenu = (req, content, callback) => {
       break;     
   }
 
-  console.log("user_key: " + req.body.user_key);
   var refUser = refKakaoUsers.ref(req.body.user_key);
   var now = new time.Date();
   now.setTimezone("Asia/Seoul");
   var timeValue = dateFormat(now, "yymmddhhMMss");
-  restaurantRef.update(
+  console.log("user_key: " + req.body.user_key);
+  console.log("timeValue: " + timeValue);
+
+  refUser.update(
   {
     timeValue: content
   });
