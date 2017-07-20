@@ -21,6 +21,9 @@
     "iconv": "latest",
     "apiai": "latest",
     "memory-cache": "latest",  
+    "apiai": "latest",
+    "time": "latest",  
+    "dateformat": "latest",  
     "serve-favicon": "~2.3.0"
   }
 }

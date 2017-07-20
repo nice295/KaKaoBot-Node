@@ -17,6 +17,17 @@ const checkUserKey = (req, res, next)=>{
   }
 };
 
+router.get('/tomorrow', (req, res) => {
+
+  getTomorrowMenu(function(data) {
+    console.log(data);
+
+    res.set({
+      'content-type': 'application/json'
+    }).send(JSON.stringify(message.baseType(data)));
+  });
+});
+
 router.get('/test', (req, res) => {
 
   var returnStrint;

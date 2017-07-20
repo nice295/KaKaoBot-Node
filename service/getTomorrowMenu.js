@@ -2,6 +2,8 @@ const message = require('../service/message');
 var cheerio = require('cheerio');
 var request = require('request');
 var Iconv1 = require('iconv').Iconv
+const dateFormat = require('dateformat');
+const time = require('time');
 
 var returnString = "";
 
@@ -65,7 +67,11 @@ function getTomorrowMenu(callback) {
             var myMap = new Map(restaurantMap);
 
             var date = $('.date', '#layer2').text();
-            returnString += "내일 메뉴 - "+ date;
+            returnString = "내일 메뉴 - "+ date;
+
+            var now = new time.Date();
+            now.setTimezone("Asia/Seoul");
+            returnString += " (" + dateFormat(now, "ddd") + ")"
 
             returnString += "\n\n< 1식당(AB타워) - 점심> (하하)";
 
