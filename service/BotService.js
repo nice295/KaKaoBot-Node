@@ -153,7 +153,7 @@ Bot.choseMenu = (req, content, callback) => {
   console.log("user_key: " + req.body.user_key);
   console.log("timeValue: " + timeValue);
 
-  firebase.database().ref('kakao/users/' + req.body.user_key + '/action/' + content).set({
+  firebase.database().ref('kakao/users/' + req.body.user_key + '/action/' + content + "/" + timeValue).set({
     time : timeValue
   });
 
