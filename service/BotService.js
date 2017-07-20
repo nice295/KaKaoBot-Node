@@ -147,8 +147,9 @@ Bot.choseMenu = (req, content, callback) => {
   }
 
   var now = new time.Date();
-  //now.setTimezone("Asia/Seoul");
-  var timeValue = dateFormat(now, "yyyymmddHHMMss");
+  now.setTimezone("Asia/Seoul");
+  //var timeValue = dateFormat(now, "yyyymmddHHMMss");
+  var timeValue = now.format("yyyymmddHHMMss");
 
   console.log("user_key: " + req.body.user_key);
   console.log("timeValue: " + timeValue);
