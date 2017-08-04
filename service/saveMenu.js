@@ -168,6 +168,7 @@ function _saveMenu(cafe) {
                         restaurantRef.update(
                         {
                             menu: menuTitle,
+                            restaurant: restaurant,
                             description: description
                         });
 
@@ -260,6 +261,7 @@ function _saveMenu(cafe) {
                         restaurantRef.update(
                         {
                             menu: menuTitle,
+                            restaurant: restaurant,
                             description: description
                         });
 
@@ -315,6 +317,7 @@ function _saveMenu(cafe) {
                         restaurantRef.update(
                         {
                             menu: menuTitle,
+                            restaurant: restaurant,
                             description: description
                         });
 
@@ -370,6 +373,7 @@ function _saveMenu(cafe) {
                         restaurantRef.update(
                         {
                             menu: menuTitle,
+                            restaurant: restaurant,
                             description: description
                         });
 
