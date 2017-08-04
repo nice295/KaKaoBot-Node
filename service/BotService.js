@@ -9,6 +9,9 @@ const firebase = require('firebase');
 const dateFormat = require('dateformat');
 const time = require('time');
 
+var ua = require('universal-analytics');
+var visitor = ua('UA-51117181-7');
+
 // Initialize Firebase
 var config = {
   apiKey: "AIzaSyASEMR2PC7ngVtgEQ50TVJJeAYHPTrztW8",

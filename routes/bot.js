@@ -12,7 +12,7 @@ var visitor = ua('UA-51117181-7');
 
 //setInterval(saveMenu, 1000*60*60);
 saveMenu()
-setInterval(saveMenu, 1000*60);
+setInterval(saveMenu, 3*1000*60*60);
 
 const checkUserKey = (req, res, next)=>{
   if(req.body.user_key !== undefined){
