@@ -1,14 +1,6 @@
-/**
- * Created by cheese on 2017. 2. 9..
- */
+const Bot = {};
 
-const
-  request = require('request'),
-  cheerio = require('cheerio'),
-  async = require('async'),
-  message = require('../service/message'),
-  Bot = {};
-
+const message = require('../service/message');
 const getMenu = require('../service/getMenu');
 const getTomorrowMenu = require('../service/getTomorrowMenu');
 const getApiai = require('../service/getApiai');
@@ -30,6 +22,7 @@ firebase.initializeApp(config);
 var database = firebase.database();
 
 Bot.choseMenu = (req, content, callback) => {
+  visitor.event("message", content, req.body.user_key, 0).send();
 
   switch (content) {
     case "🏠 1식당-점심":
@@ -46,11 +39,6 @@ Bot.choseMenu = (req, content, callback) => {
           cache.put('1-lunch', data, 1 * 60 * 60 * 1000);
         });
       }
-      /*
-      getMenu(12, function (data) {
-        callback(null, message.baseType(data));
-      });
-      */
       break;
 
     case "2식당-아침":
@@ -65,11 +53,6 @@ Bot.choseMenu = (req, content, callback) => {
           cache.put('2-breakfast', data, 1 * 60 * 60 * 1000);
         });
       }
-      /*
-      getMenu(21, function (data) {
-        callback(null, message.baseType(data));
-      });
-      */
       break;
 
     case "2식당-점심":
@@ -104,11 +87,6 @@ Bot.choseMenu = (req, content, callback) => {
           cache.put('2-dinner', data, 1 * 60 * 60 * 1000);
         });
       }
-      /*
-      getMenu(23, function (data) {
-        callback(null, message.baseType(data));
-      });
-      */
       break;
 
     case "내일 뭐먹지?":
@@ -123,7 +101,6 @@ Bot.choseMenu = (req, content, callback) => {
           cache.put('tomorrow-menu', data, 1 * 60 * 60 * 1000);
         });
       }
-      //callback(null, message.baseType("알려드리고 싶지만 나중에... (아잉)"));
       break;
 
     case "문의하기":

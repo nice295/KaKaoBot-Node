@@ -8,12 +8,10 @@ function getApiai(quetion, callback){
     });
     
     request.on('response', function(response) {
-        //console.log(response.result.fulfillment.speech);
         callback(response.result.fulfillment.speech);        
     });
     
     request.on('error', function(error) {
-        //console.log(error);
         callback("허거덕...");
     });    
 

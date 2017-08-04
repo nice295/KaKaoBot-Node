@@ -1,13 +1,18 @@
 const express = require('express');
 const router = express.Router();
 const message = require('../service/message');
-//const CronService = require('../service/CronService');
 const Bot = require('../service/BotService');
 const getMenu = require('../service/getMenu');
 const getTomorrowMenu = require('../service/getTomorrowMenu');
 const getApiai = require('../service/getApiai');
+const saveMenu = require('../service/saveMenu');
 
-//require('../databases/redis')(router); // redis
+var ua = require('universal-analytics');
+var visitor = ua('UA-51117181-7');
+
+//setInterval(saveMenu, 1000*60*60);
+saveMenu()
+setInterval(saveMenu, 1000*60);
 
 const checkUserKey = (req, res, next)=>{
   if(req.body.user_key !== undefined){
@@ -77,6 +82,9 @@ router.get('/test', (req, res) => {
 });
 
 router.get('/keyboard', (req, res) => {
+  visitor.pageview("/").send();
+  visitor.event("keyboard", "keyboard", req.body.user_key, 0).send();
+
   res.set({
     'content-type': 'application/json'
   }).send(JSON.stringify(message.buttonsType()));

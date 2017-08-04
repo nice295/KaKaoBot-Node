@@ -69,10 +69,6 @@ function getTomorrowMenu(callback) {
             var date = $('.date', '#layer2').text();
             returnString = "내일 메뉴 - "+ date;
 
-            var now = new time.Date();
-            now.setTimezone("Asia/Seoul");
-            returnString += " (" + dateFormat(now, "ddd") + ")"
-
             returnString += "\n\n< 1식당(AB타워) - 점심> (하하)";
 
             $('.cafeB_tit', '#layer2').each(function () {
