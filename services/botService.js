@@ -1,9 +1,9 @@
 const Bot = {};
 
-const message = require('../service/message');
-const getMenu = require('../service/getMenu');
-const getTomorrowMenu = require('../service/getTomorrowMenu');
-const getApiai = require('../service/getApiai');
+const message = require('../services/messages');
+const getMenu = require('../services/getMenu');
+const getTomorrowMenu = require('../services/getTomorrowMenu');
+const getApiai = require('../services/getApiai');
 const cache = require('memory-cache');
 const firebase = require('firebase');
 const dateFormat = require('dateformat');
@@ -28,19 +28,27 @@ Bot.choseMenu = (req, content, callback) => {
   visitor.event("message", content, req.body.user_key, 0).send();
 
   switch (content) {
-    case "🏠 1식당-점심":
+    case "1식당-점심":
     case "점심":
     case "1식당":
     case "1":
+      /*
+      getMenu(12, function (data) {
+        callback(null, message.baseType(data));
+        //callback(null, message.messageButtonType(data, "자세히 보기", "https://uxd2.github.io/rndmenu-web/cafe1-lunch.framer/"));
+      });
+      */
+      
       if (cache.get('1-lunch')) {
         console.log(cache.get('1-lunch'));
-        //callback(null, message.baseType(cache.get('1-lunch')));
-        callback(null, message.messageButtonType(cache.get('1-lunch'), "자세히 보기", "https://uxd2.github.io/rndmenu-web/cafe1-lunch.framer/"));
+        //callback(null, message.messageButtonType(cache.get('1-lunch'), "자세히 보기", "http://seoul-rnd-menu.webflow.io/"));        
+        callback(null, message.baseType(cache.get('1-lunch')));      
       } else {
         console.log("No 1-lunch");
         getMenu(12, function (data) {
           //callback(null, message.baseType(data));
-          callback(null, message.messageButtonType(cache.get('1-lunch'), "자세히 보기", "https://uxd2.github.io/rndmenu-web/cafe1-lunch.framer/"));
+          //callback(null, message.baseType(data, "자세히 보기", "http://seoul-rnd-menu.webflow.io/"));
+          callback(null, message.messageButtonType(data));
           cache.put('1-lunch', data, 1 * 60 * 60 * 1000);
         });
       }
